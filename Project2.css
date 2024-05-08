@@ -1,0 +1,235 @@
+body
+{
+    background-color: hsl(39, 100%, 84%);
+}
+
+.image-container {
+    position: relative;
+    display: block;
+    align-items:  center;
+}
+.headimg
+{
+    filter: brightness(70%);   
+}
+.HIDE{
+    background-color: hsl(39, 100%, 84%);
+    position: sticky;
+    position: -webkit-sticky;
+    top: 0;
+}
+
+.text-overlay {
+    position: absolute;
+    top: 75%;
+    left: 32%;
+    transform: translate(-50%, -50%);
+    color: white; /* Змінюємо колір тексту */
+   font-size: 5vw; /* Розмір шрифту */
+    text-align: center; /* Вирівнюємо текст по центру */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Тінь тексту */
+}
+.navbar
+{
+    background-color: hsl(39, 100%, 84%);
+    position: sticky;
+    position: -webkit-sticky;
+    top: 0;
+    width: 100%;
+    height: 80px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, .1);
+}
+.navbar .container{
+    height: inherit;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.navbar-menu
+{
+    list-style-type: none;
+    padding-left: 0;
+    margin-bottom: 0;
+}
+.navbar-menu li 
+{
+    display: inline-block;
+}
+.navbar-menu li a:hover
+{
+    opacity: 1;
+}
+
+.navbar-menu li a
+{
+    display: inline-block;
+    color: #000;
+    opacity: 0.6;
+    text-decoration: none;
+    font-size: clamp(10px, 3vw, 20px);
+    padding: 10px;
+    padding-right: 40px;
+    transition: all .17s ease-in-out;
+}
+
+
+
+.navbar-wrap
+{
+    display: flex;
+    flex-flow: row nowrap;
+}
+.main-page
+{   
+        padding-left: 20px;
+        font-weight: 700;
+        font-size: clamp(16px, 3vw, 26px);
+        text-decoration: none;
+        color: gray;
+        transition: all .17s ease-in-out;
+}
+.main-page:hover
+{
+    color:coral;
+}
+.Text{
+    width: 70%; /* Нова ширина діва */
+    height: 40%; /* Нова висота діва */
+    font-size: clamp(13px, 3vw, 20px); /* Зменшений розмір шрифту */
+    padding: 10px;
+}
+.quote
+{
+    background-color: hsl(0, 0%, 94%);
+   padding-left: 15px;     
+}
+.pt-sans caption-regular {
+    font-family: "PT Sans Caption", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+ 
+.montserrat-shrift{
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 200;
+  font-style: normal;
+}
+p {
+    font-size: clamp(13px, 4vw, 20px);
+}
+i 
+{
+    font-size: clamp(13px, 4vw, 20px);
+}
+h1{  font-size: clamp(30px, 5vw, 60px);}
+h2{  font-size: clamp(20px, 5vw, 40px);}
+h3{  font-size: clamp(25px, 5vw, 35px);}
+.burger
+{
+    display: flex;
+    position: fixed;
+    z-index: 50;
+    align-items: center;
+    justify-content: flex-end;
+    width: 30px;
+    height: 18px;
+    right: 15px;
+    
+}
+.burger span
+{
+    height: 2px;
+    width: 80%;
+    transform: scale(1);
+    background-color: #000;
+    
+}
+.burger::before, .burger::after
+{
+    content: '';
+    position: absolute;
+    height: 2px;
+    width: 100%;
+    background-color: #000;
+    transition: all 0.3s ease 0s;
+
+}
+.burger::before{top: 0;}
+.burger::after{ bottom: 0;}
+.burger.active span{transform: scale(0);}
+.burger.active::before
+{
+    top: 50%;
+    transform: rotate(-45deg) translate(0, -50%);
+}
+.burger.active::after
+{
+    bottom: 50%;
+    transform: rotate(45deg) translate(0, 50%);
+}
+.nav
+{
+    display: flex;
+    width: 700px;
+    padding: 0 40px;
+}
+.nav ul{
+    width: 100%;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+   
+}
+@media only screen and (max-width: 749px) {
+   
+    body.HIDE1
+    {
+        overflow: hidden;
+    }
+    .HIDE
+    {
+      display: none;
+    }
+    .HIDE2
+    {
+      display: block;
+    }
+    .nav{
+        display: none;
+        flex-direction: column;
+        position: fixed;
+        height: 100%;
+        width: 100%;
+        top: 0; bottom: 0; left: 0; right: 0;
+        z-index: 50;
+        overflow-y: auto;
+        padding: 50px 40px;
+        background-color: wheat;
+        animation: burgerAnimation 0.4s;
+       
+    }
+    .nav ul
+    {
+        flex-direction: column;
+        row-gap: 30px;
+    }
+    }
+    .open
+    {
+        display: flex !important;
+    }
+    @media all and (min-width: 750px ) and (max-width: 9000px) {
+  
+          .HIDE1
+          {
+              display: none;
+          }
+      
+      }
+    @keyframes burgerAnimation
+    {
+        from{opacity: 0;}
+        to{opacity: 1;}
+    }
+  
